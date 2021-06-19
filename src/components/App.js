@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 //Declarando constante a porta do json-server após forçar ele criando uma script no package.json
-const url = "http://localhost:5000/contacts";
+const url = "http://localhost:5000/contacts/";
 
 class App extends Component {
   state = {
@@ -116,6 +116,7 @@ class App extends Component {
         <table className="table table-dark table-striped table-hover">
           <thead>
             <tr>
+              <th>#️⃣</th>
               <th>Nome</th>
               <th>Email</th>
               <th>Telefone</th>
@@ -126,6 +127,7 @@ class App extends Component {
             {this.state.data.map((contacts) => {
               return (
                 <tr>
+                  <td>{contacts.id}</td>
                   <td>{contacts.name}</td>
                   <td>{contacts.email}</td>
                   <td>{contacts.phone}</td>
